@@ -7,7 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/branches")
+@RequestMapping("/branches")
 public class BranchController {
 
     private final BranchService branchService;
