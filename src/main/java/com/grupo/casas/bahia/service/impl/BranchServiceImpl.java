@@ -18,6 +18,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Slf4j
@@ -25,7 +26,7 @@ import java.util.Optional;
 public class BranchServiceImpl implements BranchService {
 
     @Value("${host.branches}")
-    private String hostBranches;
+    String hostBranches;
 
     private final BranchRepository repository;
     private final BranchMapper mapper;
@@ -78,23 +79,23 @@ public class BranchServiceImpl implements BranchService {
 
         boolean updated = false;
 
-        if (!branch.getName().equals(dto.getName())) {
+        if (!Objects.equals(branch.getName(), dto.getName())) {
             branch.setName(dto.getName());
             updated = true;
         }
-        if (!branch.getDocument().equals(dto.getDocument())) {
+        if (!Objects.equals(branch.getDocument(), dto.getDocument())) {
             branch.setDocument(dto.getDocument());
             updated = true;
         }
-        if (!branch.getCity().equals(dto.getCity())) {
+        if (!Objects.equals(branch.getCity(), dto.getCity())) {
             branch.setCity(dto.getCity());
             updated = true;
         }
-        if (!branch.getState().equals(dto.getState())) {
+        if (!Objects.equals(branch.getState(), dto.getState())) {
             branch.setState(dto.getState());
             updated = true;
         }
-        if (!branch.getType().equals(dto.getType())) {
+        if (!Objects.equals(branch.getType(), dto.getType())) {
             branch.setType(dto.getType());
             updated = true;
         }
@@ -102,11 +103,11 @@ public class BranchServiceImpl implements BranchService {
             branch.setActive(dto.isActive());
             updated = true;
         }
-        if (!branch.getRegistrationDate().equals(dto.getRegistrationDate())) {
+        if (!Objects.equals(branch.getRegistrationDate(), dto.getRegistrationDate())) {
             branch.setRegistrationDate(dto.getRegistrationDate());
             updated = true;
         }
-        if (!branch.getLastUpdate().equals(dto.getLastUpdate())) {
+        if (!Objects.equals(branch.getLastUpdate(), dto.getLastUpdate())) {
             branch.setLastUpdate(dto.getLastUpdate());
             updated = true;
         }

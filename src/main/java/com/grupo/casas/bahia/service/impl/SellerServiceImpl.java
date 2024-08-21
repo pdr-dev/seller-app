@@ -107,7 +107,7 @@ public class SellerServiceImpl implements SellerService {
                 log.info("Updated email for seller id {}: {}", id, sellerRequest.getEmail());
             }
 
-            if (!Objects.equals(seller.getBranch().getDocument(), sellerRequest.getBranchDocument())) {
+            if (Objects.equals(seller.getBranch(), null) || !Objects.equals(seller.getBranch().getDocument(), sellerRequest.getBranchDocument())) {
                 seller.setBranch(branchService.getBranchByDocument(sellerRequest.getBranchDocument()));
                 isUpdated = true;
                 log.info("Updated branch for seller id {}: {}", id, sellerRequest.getBranchDocument());

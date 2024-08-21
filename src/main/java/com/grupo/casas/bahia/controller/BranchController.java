@@ -1,16 +1,10 @@
 package com.grupo.casas.bahia.controller;
 
-import com.grupo.casas.bahia.controller.dto.request.SellerRequestDTO;
 import com.grupo.casas.bahia.controller.dto.response.BranchResponseDTO;
-import com.grupo.casas.bahia.controller.dto.response.SellerResponseDTO;
 import com.grupo.casas.bahia.service.BranchService;
-import com.grupo.casas.bahia.service.SellerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
-
 
 @RestController
 @RequestMapping("/api/branches")

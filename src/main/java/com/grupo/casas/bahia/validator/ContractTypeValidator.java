@@ -21,9 +21,8 @@ public class ContractTypeValidator implements ConstraintValidator<ValidContractT
         }
 
         return switch (requestDTO.getContractType()) {
-            case CLT -> CpfUtils.isValidCpf(requestDTO.getDocument());
+            case CLT, OUT -> CpfUtils.isValidCpf(requestDTO.getDocument());
             case PJ -> CnpjUtils.isValidCnpj(requestDTO.getDocument());
-            default -> true;
         };
     }
 }

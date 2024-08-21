@@ -7,6 +7,4 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface BranchMapper {
     Branch convertToEntity(BranchResponseDTO branchResponseDTO);
-
-    BranchResponseDTO convertToDto(Branch branch);
 }
